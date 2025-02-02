@@ -1,0 +1,226 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f5f7;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.image-section {
+    flex: 1;
+    background: url('../images/form_frame.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start content at the top */
+    justify-content: center;
+    align-items: center; /* Center content horizontally */
+    padding: 10px; /* Add spacing inside the section */
+}
+
+.info {
+    background-color: rgba(41, 95, 63, 0.7); /* Semi-transparent green background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    text-align: left;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px; /* Add spacing below the logo */
+}
+
+.info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.image-section h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.image-section p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Right Section - Login Form */
+.form-section {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+
+.image-section h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #005129;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+    color: #ffffff;
+}
+
+input[type="email"], input[type="password"], input[type="text"], textarea[type="Message"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e6fdf1;
+    background-color: #e6fdf1;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.x-btn{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.x-btn:hover{
+    text-decoration: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #B0F7D5; /* Green for Submit button */
+    border: none;
+    color: #005129;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #009349;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+a {
+    color: #008000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Popup Background */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #e6fff2;
+    border: 2px solid #00b359;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Icon */
+.success-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.popup-content button {
+    background-color: #006622;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #009933;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section {
+        height: 50vh;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+}

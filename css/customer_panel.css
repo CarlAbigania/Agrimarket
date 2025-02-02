@@ -1,0 +1,618 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  align-items: center;
+  background-color: #005129;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  padding: 20px 40px;
+  column-gap: 10%;
+}
+
+header img {
+  width: 10%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10%;
+  width: 90%;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #00e676;
+  transition: 0.4s ease;
+}
+
+.cart a:first-child {
+  display: none;
+}
+
+nav a button:hover {
+  background-color: #00ad59;
+}
+
+header a {
+  color: #fff;
+}
+
+nav button {
+  background-color: #00e676;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10em;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: inline;
+}
+
+/* Mobile Menu Container */
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  background-color: #005129;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
+  z-index: 6;
+  transition: left 0.4s ease-in-out;
+  height: auto;
+  max-height: 300px;
+  overflow: hidden;
+  border-radius: 0 15px 15px 0;
+}
+
+.menu-container.show {
+  left: 0;
+}
+
+.close-icon {
+  align-self: flex-end;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 10px 15px;
+  background-color: #005129;
+  border-radius: 10px;
+  width: 90%;
+  gap: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 207, 106, 0.1);
+  color: #00e676;
+}
+
+.menu-item i {
+  font-size: 1.5rem;
+}
+
+header .logout-btn {
+  width: 10vh;
+  padding: 5px 10px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+header .logout-btn:hover {
+  background-color: #e04f2f;
+}
+
+/* Responsive Styles for Mobile View */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px 5px;
+    background-color: #0b270d;
+  }
+
+  header img {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-icon {
+    order: -1;
+    margin-right: auto;
+  }
+
+  .menu-icon a:first-child {
+    display: block;
+  }
+
+  nav .link {
+    display: none;
+  }
+}
+
+/* Responsive Styles for Desktop View */
+@media (min-width: 769px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+.menu-container.show {
+  right: 0;
+}
+
+
+/* Hero Section Styling */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10vh;
+    height: 75vh;
+    color: #fff;
+    background: url('../images/hero_section.png') no-repeat center center;
+    background-size: cover;
+}
+
+.hero h1 {
+    padding-left: 50px;
+    font-size: 24px;
+}
+
+.hero p {
+    padding-left: 50px;
+    font-size: 16px;
+}
+
+.quote{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    background-color: #005129;
+    color: #ffffff;
+}
+
+.quote h1 {
+    padding: 15px;
+    font-size: 24px;
+}
+
+.quote p {
+    padding-bottom: 10px;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Product Categories */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    background-color: #09421c;
+    padding: 10px;
+    color: #fff;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.categories a:hover {
+    color: #ffc107;
+}
+
+
+h2{
+    padding: 100px;
+    text-align: center;
+    color: #134317;
+}
+
+.categories a.active {
+    color: yellow;
+}
+
+/* Product Cards */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin: 10px 0;
+  padding-left: 10px;
+}
+
+.product-card h5 {
+  font-size: 16px;
+  margin: 10px 0;
+  padding-left: 10px;
+  font-weight: normal;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #006735;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.product-card button {
+  padding: 10px 20px;
+  background-color: #00b85e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.product-card button:hover {
+  background-color: #008f2a;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Mobile View for Hero Section */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    padding: 20vh 2vh 0;
+    background-size: cover;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+    padding-left: 0;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .hero p {
+    font-size: 14px;
+    text-align: center;
+    padding-left: 0;
+    margin: 10px 0;
+  }
+}
+
+/* Mobile View for Categories */
+@media screen and (max-width: 768px) {
+  .categories {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px;
+    padding: 15px 10px;
+    background-color: #09421c;
+    color: #fff;
+    align-items: center;
+  }
+
+  .categories a {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+
+  .categories a:hover {
+    background-color: rgba(255, 193, 7, 0.2); /* Hover effect */
+    color: #ffc107;
+  }
+
+  .categories a.active {
+    background-color: #00b85e;
+    color: white;
+  }
+}
+
+/* Mobile View for Product Cards */
+@media screen and (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr; /* Single-column layout for mobile */
+    padding: 15px;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    margin: 15px 0; /* Add margin between cards */
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-card img {
+    width: 80%;
+    height: auto; /* Make image responsive */
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  .product-card h3,
+  .product-card h5 {
+    font-size: 16px; /* Adjust text size */
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .product-card p {
+    font-size: 14px;
+    color: #006735;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .product-card button {
+    padding: 10px 20px;
+    background-color: #00b85e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .product-card button:hover {
+    background-color: #008f2a;
+  }
+}
+
+/* Mobile View for Popup */
+@media screen and (max-width: 768px) {
+  .popup-content {
+    width: 90%; /* Popup takes more width */
+    padding: 20px; /* Add more padding for mobile */
+  }
+
+  .popup-header h2 {
+    font-size: 18px; /* Adjust header font size */
+    margin-bottom: 10px;
+  }
+
+  .popup-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .popup-footer button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .popup-image img {
+    width: 80px;
+    height: 80px; /* Adjust image size */
+  }
+
+  .popup-details {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .popupquantity {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+
+/* footer*/
+.footer-container {
+  background-color: #002610;
+  color: #e6fdf1;
+  padding: 3em 1em 4em;
+  transition: background-color 0.3s ease;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.footer-logo {
+  flex: 1;
+}
+
+.footer-logo .logo-background {
+  background: url("../AgriMarket/assets/images/Logo.png") 0 0 / 40% no-repeat;
+  background-size: 60px 60px;
+  margin-bottom: 15px;
+  height: 60px;
+  width: 60px;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.footer-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-links h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #e6fdf1;
+  transition: font-size 0.3s ease;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 1rem;
+  color: #e6fdf1;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00b85e;
+}
+
+.footer-contacts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-contacts h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #e6fdf1;
+}
+
+.footer-contacts p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.footer-contacts p strong {
+  color: #e6fdf1;
+  transition: color 0.3s;
+}
+
+.footer-contacts p strong:hover {
+  color: #00b85e;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-contacts {
+    flex: 1;
+    text-align: left;
+  }
+
+  .footer-logo .logo-background {
+    margin: 0 auto;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-contacts p {
+    font-size: 0.8rem;
+  }
+}

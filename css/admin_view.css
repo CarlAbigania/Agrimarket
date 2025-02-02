@@ -1,0 +1,497 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #005129;
+  color: #fff;
+}
+
+/* Logo Styling */
+header img {
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 2.5vh;
+}
+
+/* Hero Section Styling */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 65vh;
+  color: #fff;
+  background: url("../images/hero_section.png") no-repeat center center;
+  background-size: cover;
+}
+
+.hero h1 {
+  padding-left: 50px;
+  font-size: 24px;
+}
+
+.hero p {
+  padding-left: 50px;
+  font-size: 16px;
+}
+
+header .logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 10rem;
+  padding: 10px 20px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+header .logout-btn:hover {
+  background-color: #e04f2f;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+  background-color: #005129;
+  color: #ffffff;
+}
+
+.quote h1 {
+  padding: 15px;
+  font-size: 24px;
+}
+
+.quote p {
+  padding: 15px;
+  font-size: 16px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10%;
+  background-color: #09421c;
+  padding: 10px;
+  color: #fff;
+}
+
+.categories a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.categories a:hover {
+  color: #ffc107;
+}
+
+.categories a.active {
+  color: yellow;
+}
+
+h2 {
+  padding: 5vh;
+  text-align: center;
+  color: #134317;
+}
+
+/* Form Container */
+form {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h1 {
+  font-size: 28px;
+  color: #005129;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Category Dropdown Styling */
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+select:focus {
+  background-color: #f0f8ff;
+  border-color: #005129;
+}
+
+/* Main Table Container */
+.table-container {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid #e1e1e1;
+}
+
+/* Table Header */
+.table-header {
+  display: flex;
+  background-color: #3c8d5b; /* Elegant green shade */
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 3px solid #006644; /* Darker border for better contrast */
+  text-transform: uppercase;
+}
+
+.header-item {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 5px;
+  letter-spacing: 1px;
+  border-right: 2px solid #e1e1e1; /* Stronger borders between header items */
+}
+
+.header-item:last-child {
+  border-right: none; /* Remove border on the last header cell */
+}
+
+/* Table Body */
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Table Row */
+.table-row {
+  display: flex;
+  padding: 12px;
+  border-bottom: 2px solid #e1e1e1; /* Strong border between rows */
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: #e7f7f0; /* Soft hover effect */
+}
+
+.table-cell {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  border-right: 2px solid #e1e1e1; /* Stronger borders between cells */
+}
+
+.table-cell:last-child {
+  border-right: none; /* Remove right border from last cell */
+}
+
+/* Table Cell Image Styling */
+.table-cell img {
+  width: 100px; /* Increased width for a larger image */
+  height: 100px; /* Increased height for a larger image */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Actions Link Styling */
+.btn-action {
+  font-size: 0.9rem;
+  color: #3c8d5b;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-action:hover {
+  background-color: #3c8d5b;
+  color: white;
+}
+
+.table-cell a {
+  color: #3c8d5b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.table-cell a:hover {
+  color: #ffc107;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+    margin: 10px;
+  }
+
+  .table-header {
+    display: block;
+    background-color: #3c8d5b;
+    color: white;
+    font-weight: 600;
+    padding: 12px;
+    border-bottom: 3px solid #006644;
+  }
+
+  .header-item {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  .table-row {
+    display: block;
+    padding: 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  .table-cell {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #e1e1e1;
+    overflow: hidden;
+  }
+
+  .table-cell:last-child {
+    border-bottom: none;
+  }
+
+  .table-cell img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .btn-action {
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+}
+
+/* footer*/
+.footer-container {
+  background-color: #002610;
+  color: #e6fdf1;
+  padding: 3em 1em 4em;
+  transition: background-color 0.3s ease;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  gap: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.footer-logo {
+  flex: 1;
+}
+
+.footer-logo .logo-background {
+  background: url("../images/agrimarket_logo.png") 0 0 / 40% no-repeat;
+  background-size: 60px 60px;
+  margin-bottom: 15px;
+  height: 60px;
+  width: 60px;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.footer-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-links h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #e6fdf1;
+  transition: font-size 0.3s ease;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 1rem;
+  color: #e6fdf1;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00b85e;
+}
+
+.footer-contacts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-contacts h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #e6fdf1;
+}
+
+.footer-contacts p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.footer-contacts p strong {
+  color: #e6fdf1;
+  transition: color 0.3s;
+}
+
+.footer-contacts p strong:hover {
+  color: #00b85e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header .logout-btn {
+    width: 6.5rem;
+    padding: 10px 20px;
+  }
+
+  /* Hero Section */
+  .hero h1 {
+    padding-left: 0px;
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .hero p {
+    padding-left: 20vh;
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  /* Quote Section */
+  .quote {
+    padding: 30px; /* Reduce padding for mobile */
+  }
+
+  .quote h1 {
+    font-size: 20px;
+  }
+
+  .quote p {
+    font-size: 14px;
+  }
+
+  /* Categories */
+  .categories {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allow horizontal scroll for categories */
+    gap: 10vh;
+    padding: 10px 0;
+    background-color: #09421c;
+    color: #fff;
+  }
+
+  .categories a {
+    font-size: 14px; /* Reduce font size */
+  }
+
+  /* Form Container */
+  form {
+    padding: 15px; /* Reduce padding */
+  }
+
+  form h1 {
+    font-size: 24px; /* Adjust font size for mobile */
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-contacts {
+    flex: 1;
+    text-align: left;
+  }
+
+  .footer-logo .logo-background {
+    margin: 0 auto;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-contacts p {
+    font-size: 0.8rem;
+  }
+}

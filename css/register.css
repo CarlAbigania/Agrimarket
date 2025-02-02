@@ -1,0 +1,213 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    /* outline: 2px solid red; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background-color: #f4f5f7;
+}
+
+.login-container {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Left Section - Background Image */
+.logo {
+    padding-top: 150px;
+    width: 100px;
+    display: block;
+    margin: 20px auto;
+}
+
+.image-section {
+    flex: 1;
+    background: url('../images/hcibg.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.info {
+    background-color: rgba(41, 95, 63, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+}
+
+.info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.image-section h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.image-section p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Right Section - Login Form */
+.form-section {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #4b6f5e;
+}
+
+input[type="email"], input[type="password"], input[type="text"], textarea[type="delivery_address"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e6fdf1;
+    background-color: #e6fdf1;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+}
+.password-wrapper input {
+    flex: 1;
+}
+.password-wrapper label {
+    margin-left: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #005129;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #009349;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+a {
+    color: #008000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Popup Background */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+.popup-content {
+    background-color: #e6fff2;
+    border: 2px solid #00b359;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.success-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.popup-content button {
+    background-color: #006622;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #009933;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section {
+        height: 50vh;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+}
