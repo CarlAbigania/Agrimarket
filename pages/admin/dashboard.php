@@ -60,8 +60,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->close();
 }
 
-
-$conn->close();
+// Fetch categories for the dropdown
+$categoriesResult = $conn->query("SELECT * FROM categories ORDER BY category_name ASC");
+$categories = [];
+if ($categoriesResult && $categoriesResult->num_rows > 0) {
+    while ($row = $categoriesResult->fetch_assoc()) {
+        $categories[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +88,7 @@ $conn->close();
         <button class="logout-btn" onclick="confirmLogout()">Log Out</button>
     </header>
     <div class="hero">
-        <h1>- WELCOME TO<br><br><span style="font-size: 50px;">AGRIMARKET ONLINE SHOP</span><br><br></h1>
+        <h1>WELCOME TO<br><span>AGRIMARKET ONLINE SHOP</span></h1>
         <p>"AgriMarket: Bridging Farmers and Communities with Fresh, Local Goodness!"</p>
     </div>
 
@@ -92,7 +98,7 @@ $conn->close();
     </div>
 
     <div class="categories">
-        <a href="dashboard.php">CREATE NEW PRODUCT</a>
+        <a href="dashboard.php" class="active">CREATE NEW PRODUCT</a>
         <a href="view_products.php">VIEW PRODUCTS</a>
         <a href="view_feedback.php">VIEW FEEDBACKS</a>
         <a href="view_orders.php">VIEW ORDERS</a>
@@ -100,51 +106,46 @@ $conn->close();
 
     <h2>Add a Product</h2>
     <form action="dashboard.php" method="post" enctype="multipart/form-data">
-        <label for="product_name">Product Name:</label><br>
-        <input type="text" id="product_name" name="product_name" required><br><br>
+        <div class="form-group">
+            <label for="product_name">Product Name</label>
+            <input type="text" id="product_name" name="product_name" placeholder="Enter product name" required>
+        </div>
 
-        <label for="category_id">Category ID:</label><br>
-        <input type="number" id="category_id" name="category_id"><br><br>
+        <div class="form-group">
+            <label for="category_id">Product Category</label>
+            <select id="category_id" name="category_id">
+                <option value="">Select a Category</option>
+                <?php foreach ($categories as $category): ?>
+                    <option value="<?php echo $category['category_id']; ?>">
+                        <?php echo htmlspecialchars($category['category_name']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
 
-        <label for="price">Price:</label><br>
-        <input type="number" step="0.01" id="price" name="price" required><br><br>
+        <div class="form-group">
+            <label for="price">Price (₱)</label>
+            <input type="number" step="0.01" id="price" name="price" placeholder="0.00" required>
+        </div>
 
-        <label for="stock">Stock:</label><br>
-        <input type="number" id="stock" name="stock"><br><br>
+        <div class="form-group">
+            <label for="stock">Stock Quantity</label>
+            <input type="number" id="stock" name="stock" placeholder="0">
+        </div>
 
-        <label for="product_image">Product Image:</label><br>
-        <input type="file" id="product_image" name="product_image" accept="image/*" required><br><br>
+        <div class="form-group">
+            <label for="product_image">Product Image</label>
+            <input type="file" id="product_image" name="product_image" accept="image/*" required>
+        </div>
 
-        <label for="description">Description:</label><br>
-        <textarea id="description" name="description"></textarea><br><br>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Describe your product..."></textarea>
+        </div>
 
-        <button type="submit">Add Product</button>
+        <button type="submit">Add Product to Inventory</button>
     </form>
 
-    <!-- footer -->
-    <footer class="footer-container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <div class="logo-background"></div>
-                <p>Lorem ipsum dolor sit amet consectetur. Tortor viverra elementum mauris suscipit porttitor interdum
-                    mauris egestas. Et consectetur nunc proin vitae congue odio proin purus. Nisi tristique tincidunt
-                    diam et. Tellus leo eu felis odio fusce massa nisl sit integer. Vel gravida lacus nec.</p>
-            </div>
-
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="dashboard.php">Create new products</a>
-                <a href="view_products.php">View products</a>
-            </div>
-
-            <div class="footer-contacts">
-                <h4>Contacts</h4>
-                <p><strong>Address:</strong> Plot 5, Idu Industrial Estate, Abuja</p>
-                <p><strong>Phone Numbers:</strong> 2348012345678, 23470123456789</p>
-                <p><strong>Email:</strong> hello@agromarket.com</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // JavaScript function to confirm logout
@@ -160,3 +161,7 @@ $conn->close();
 </body>
 
 </html>
+
+<?php
+$conn->close();
+?>

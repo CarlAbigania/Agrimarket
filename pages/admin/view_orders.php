@@ -44,42 +44,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - View Orders</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../../assets/css/view_products.css">
-    <link rel="stylesheet" href="../../assets/css/view_orders.css">
-    <style>
-        .empty-state {
-            text-align: center;
-            padding: 80px 40px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin: 40px auto;
-            max-width: 600px;
-            border: 1px solid #eee;
-        }
-
-        .empty-state i {
-            font-size: 80px;
-            color: #005129;
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .empty-state p {
-            font-size: 1.5rem;
-            color: #333;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .empty-state .sub-text {
-            font-size: 1.1rem;
-            color: #666;
-            font-weight: 400;
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/admin_dashboard.css">
 </head>
 
 <body>
@@ -90,7 +55,7 @@ $result = $conn->query($sql);
     </header>
 
     <div class="hero">
-        <h1>- WELCOME TO<br><br><span style="font-size: 50px;">AGRIMARKET ONLINE SHOP</span><br><br></h1>
+        <h1>WELCOME TO<br><span>AGRIMARKET ONLINE SHOP</span></h1>
         <p>"AgriMarket: Bridging Farmers and Communities with Fresh, Local Goodness!"</p>
     </div>
 
@@ -103,10 +68,11 @@ $result = $conn->query($sql);
         <a href="dashboard.php">CREATE NEW PRODUCT</a>
         <a href="view_products.php">VIEW PRODUCTS</a>
         <a href="view_feedback.php">VIEW FEEDBACKS</a>
-        <a href="view_orders.php">VIEW ORDERS</a> <!-- New link added here -->
+        <a href="view_orders.php" class="active">VIEW ORDERS</a>
     </div>
 
     <h2>All Orders</h2>
+    <div class="table-container">
     <?php if ($result->num_rows > 0): ?>
         <table>
             <thead>
@@ -116,18 +82,18 @@ $result = $conn->query($sql);
                     <th>Order Date</th>
                     <th>Total</th>
                     <th>Delivery Address</th>
-                    <th>Action</th> <!-- Column for delete action -->
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
-                        <td><?= $row['order_id'] ?></td>
-                        <td><?= htmlspecialchars($row['name']) ?></td>
+                        <td>#<?= $row['order_id'] ?></td>
+                        <td><strong><?= htmlspecialchars($row['name']) ?></strong></td>
                         <td><?= date('F j, Y, g:i a', strtotime($row['order_date'])) ?></td>
                         <td>₱ <?= number_format($row['total'], 2) ?></td>
                         <td><?= htmlspecialchars($row['delivery_address']) ?></td>
-                        <td><a href="?delete_order_id=<?= $row['order_id'] ?>" onclick="return confirm('Are you sure you want to delete this order?')">Delete</a></td> <!-- Delete link -->
+                        <td><a href="?delete_order_id=<?= $row['order_id'] ?>" class="btn-action btn-delete" onclick="return confirm('Are you sure you want to delete this order?')">Delete</a></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
@@ -139,30 +105,8 @@ $result = $conn->query($sql);
             <p class="sub-text">New orders will appear here once customers start shopping.</p>
         </div>
     <?php endif; ?>
+    </div>
 
-    <footer class="footer-container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <div class="logo-background"></div>
-                <p>Lorem ipsum dolor sit amet consectetur. Tortor viverra elementum mauris suscipit porttitor interdum
-                    mauris egestas. Et consectetur nunc proin vitae congue odio proin purus. Nisi tristique tincidunt
-                    diam et. Tellus leo eu felis odio fusce massa nisl sit integer. Vel gravida lacus nec.</p>
-            </div>
-
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="dashboard.php">Create new products</a>
-                <a href="view_products.php">View products</a>
-            </div>
-
-            <div class="footer-contacts">
-                <h4>Contacts</h4>
-                <p><strong>Address:</strong> Plot 5, Idu Industrial Estate, Abuja</p>
-                <p><strong>Phone Numbers:</strong> 2348012345678, 23470123456789</p>
-                <p><strong>Email:</strong> hello@agromarket.com</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         function confirmLogout() {
