@@ -164,8 +164,6 @@ include '../../includes/header.php';
                     </div>
                 </form>
             <?php endforeach; ?>
-        <?php else: ?>
-            <p>No products available</p>
         <?php endif; ?>
     </div>
 
