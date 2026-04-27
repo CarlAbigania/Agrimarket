@@ -7,7 +7,7 @@ include '../../includes/db.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../userlogin/login.php"); // Redirect to login page if not logged in
+    header("Location: ../auth/login.php"); // Redirect to login page if not logged in
     exit();
 }
 
@@ -32,7 +32,7 @@ if (!$user) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="profile.css"> <!-- Add your custom CSS here -->
+    <link rel="stylesheet" href="../../assets/css/profile.css"> <!-- Add your custom CSS here -->
 </head>
 <body>
     <header>
