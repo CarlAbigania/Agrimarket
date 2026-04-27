@@ -31,6 +31,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - AgriMarket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/contact.css">
 </head>
 <body>
@@ -52,8 +53,8 @@ $conn->close();
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
 
-                    <label for="delivery_address">Message</label><br>
-                    <textarea name="Message" required></textarea><br><br>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" required></textarea>
 
                     <button type="submit" name="submit">Send</button>
                 </form>
@@ -61,13 +62,48 @@ $conn->close();
         </div>
 
         <div class="form-section">
-            <h2>Get in Touch by any of the following means:</h2>
-            <h3>Address</h3>
-            <p>------------------------</p>
-            <h3>Email</h3>
-            <p>agrImarket@example.com</p>
-            <h3>Phone Number</h3>
-            <p>07012345678</p>
+            <div class="form-header">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you. Reach out through any of these channels.</p>
+            </div>
+            
+            <div class="contact-list">
+                <div class="contact-card-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Address</h3>
+                        <span>Plot 5, Idu Industrial Estate, Abuja</span>
+                    </div>
+                </div>
+
+                <div class="contact-card-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <span>hello@agromarket.com</span>
+                    </div>
+                </div>
+
+                <div class="contact-card-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Phone Number</h3>
+                        <span>+234 801 234 5678</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
         </div>
     </div>
 </body>
