@@ -4,3 +4,6 @@ run database (schema.sql)
 login
 - admin@agrimarket.com
 - admin123
+
+start
+- start http://localhost/Agriculture-Market/
