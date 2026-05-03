@@ -1,6 +1,6 @@
 <?php
 // Database credentials
-if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1' || $_SERVER['HTTP_HOST'] === 'agri.local') {
+if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1' || $_SERVER['HTTP_HOST'] === 'agri.local' || $_SERVER['HTTP_HOST'] === 'agrimarket.local') {
     // LOCAL SETTINGS (XAMPP)
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
